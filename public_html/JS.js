@@ -32,8 +32,8 @@ function otteloszthato(){
 }
 function forditottkiiras(){
     var tomb2=[];
-    for (var i = tomb.length ; i > 0  ; i--) {
-        tomb2[i]=tomb[i];
+    for (var i = tomb.length ; i >= 0  ; i--) {
+        tomb2 +=tomb[i];
     }
     document.getElementById("forditottszam").innerHTML = "Visszafelé kiírás " + tomb2;
 }
