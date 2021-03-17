@@ -20,11 +20,31 @@ function osszegzes(){
     document.getElementById("osszeg").innerHTML = "Az elemek összege: " + osszeg;
 }
 
+function otteloszthato(){
+    var db=0;
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%5==0){
+            db+=1;
+        }
+    }
+
+    document.getElementById("otteloszthatok").innerHTML = "Öttel osztható számok darabszáma " + db;
+}
+function forditottkiiras(){
+    var tomb2=[];
+    for (var i = tomb.length ; i > 0  ; i--) {
+        tomb2[i]=tomb[i];
+    }
+    document.getElementById("forditottszam").innerHTML = "Visszafelé kiírás " + tomb2;
+}
+
 function dolgozz() {
     
     var adat = document.getElementById("adat").value;
     feltolt(adat);
     osszegzes();
+    forditottkiiras()
+    otteloszthato();
 
 }
 
