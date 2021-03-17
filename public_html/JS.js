@@ -25,13 +25,23 @@ function dolgozz() {
     var adat = document.getElementById("adat").value;
     feltolt(adat);
     osszegzes();
-
+    paros();
 }
 
 function init() {
     console.log("Itt vagyok");
     document.getElementById("szoveg").innerHTML = "A Js dolgozik!";
     document.getElementById("ok").addEventListener("click", dolgozz);
+}
+
+function paros(){
+    var parostomb=[];
+    for (var i = 0; i < tomb.length; i++) {
+        if (tomb[i]%2===0){
+            parostomb.push(tomb[i]);
+        }
+    }
+    document.getElementById("parosszam").innerHTML = "Páros szamok: "+parostomb;
 }
 
 window.addEventListener("load", init)
