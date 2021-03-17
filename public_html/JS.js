@@ -20,6 +20,7 @@ function osszegzes(){
     document.getElementById("osszeg").innerHTML = "Az elemek összege: " + osszeg;
 }
 
+
 function otteloszthato(){
     var db=0;
     for (var i = 0; i < tomb.length; i++) {
@@ -38,6 +39,26 @@ function forditottkiiras(){
     document.getElementById("forditottszam").innerHTML = "Visszafelé kiírás " + tomb2;
 }
 
+
+
+function legnagyobb(){
+    
+    var legNaSzam = 0;
+    
+    for (var i = 0; i < tomb.length; i++) {
+        
+        if(tomb[i] > legNaSzam){
+            
+            legNaSzam = tomb[i];
+        }
+    }
+    document.getElementById("legnagyobb").innerHTML = "A legnagyobb szám: " + legNaSzam;
+    
+    // By Melinda
+}
+
+
+
 function dolgozz() {
     
     var adat = document.getElementById("adat").value;
@@ -46,12 +67,25 @@ function dolgozz() {
     forditottkiiras()
     otteloszthato();
 
+    legnagyobb();
+    paros();
+
 }
 
 function init() {
     console.log("Itt vagyok");
     document.getElementById("szoveg").innerHTML = "A Js dolgozik!";
     document.getElementById("ok").addEventListener("click", dolgozz);
+}
+
+function paros(){
+    var parostomb=[];
+    for (var i = 0; i < tomb.length; i++) {
+        if (tomb[i]%2===0){
+            parostomb.push(tomb[i]);
+        }
+    }
+    document.getElementById("parosszam").innerHTML = "Páros szamok: "+parostomb;
 }
 
 window.addEventListener("load", init)
